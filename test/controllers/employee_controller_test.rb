@@ -1,7 +1,7 @@
 require "test_helper"
 
 class EmployeeControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  def index
+    render :index
+  end
 end
