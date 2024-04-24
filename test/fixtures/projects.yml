@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pnum: 1
+  pstdate: 2024-04-24
+  penddate: 2024-04-24
+
+two:
+  pnum: 1
+  pstdate: 2024-04-24
+  penddate: 2024-04-24
