@@ -1,22 +1,4 @@
-<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-    th {
-        background-color: black;
-        color: white;
-        font-weight: bold;
-    }
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-</style>
+<link rel="stylesheet" type="text/css" href="styles.css">
 
 <h1>Employees</h1>
 
@@ -53,29 +35,40 @@
 </table>
 
 <script>
-    const sortButton = document.getElementById("sortButton");
-    const attributeSelect = document.getElementById("attributeSelect");
-    const employeeTable = document.getElementById("employee-table");
+document.getElementById('sortButton').addEventListener('click', function() {
+    var attribute = document.getElementById('attributeSelect').value;
+    console.log("Selected attribute:", attribute);
+    
+    var tbody = document.getElementById('data');
+    var rows = tbody.rows;
+    console.log("Rows before sorting:", rows);
 
-    sortButton.addEventListener("click", sortTable);
+    var arr = Array.from(rows).slice(1); // Slice to exclude header row
+    arr.sort(function(a, b) {
+        var aCell = a.cells.namedItem(attribute);
+        var bCell = b.cells.namedItem(attribute);
+        var aValue = aCell ? aCell.textContent.trim() : '';
+        var bValue = bCell ? bCell.textContent.trim() : '';
+        console.log("aValue:", aValue, "bValue:", bValue);
+        return aValue.localeCompare(bValue);
+    });
+    console.log("Sorted array:", arr);
 
-    function sortTable() {
-      const rows = Array.from(employeeTable.querySelectorAll("tbody tr"));
-      const index = attributeSelect.selectedIndex;
-      const selectedAttribute = attrSelect.options[index].value;
+    // Log sorted array before appending
+    arr.forEach(function(row) {
+        console.log(row.cells.namedItem(attribute) ? row.cells.namedItem(attribute).textContent.trim() : '');
+    });
 
-      rows.sort((rowA, rowB) => {
-            const valueA = rowA.cells[index].textContent.trim();
-            const valueB = rowB.cells[index].textContent.trim();
+    // Clear existing rows
+    tbody.innerHTML = '';
 
-            if (valueA < valueB) return -1;
-            if (valueA > valueB) return 1;
-            return 0;
-        });
-        const tbody = employeeTable.querySelector("tbody");
-        tbody.innerHTML = "";
-        rows.forEach(row => {
-            tbody.appendChild(row);
-        });
-      }
+    // Append sorted rows
+    arr.forEach(function(row) {
+        tbody.appendChild(row);
+    });
+});
 </script>
+
+
+
+

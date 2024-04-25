@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+thead th {
+    background-color: #333; 
+    color: #fff;
+    padding: 8pxl;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+thead th a {
+    color: inherit; 
+    text-decoration: none;
+}
+
+thead th a:hover {
+color: inherit; /* Inherit color on hover */
+text-decoration: underline; /* Underline on hover */
+}

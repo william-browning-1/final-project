@@ -1,40 +1,15 @@
-<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-    th {
-        background-color: black;
-        color: white;
-        font-weight: bold;
-    }
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-</style>
+<link rel="stylesheet" type="text/css" href="styles.css">
 
 <h1>Projects</h1>
-
-<select id="attributeSelect">
-    <option value="pnum">Project Number</option>
-    <option value="pstdate">Start Date</option>
-    <option value="penddate">End Date</option>
-</select>
-<button id='sortButton'>Sort</button>
 
 <table>
 
   <thead>
     <tr>
-      <th>Project Number</th>
-      <th>Start Date</th>
-      <th>End Date</th>
-    </tr>
+    <th><%= link_to "Project Number", :sort => "pnum"%> </th>
+    <th><%= link_to "Start Date", :sort => "pstdate"%> </th>
+    <th><%= link_to "End Date", :sort => "penddate"%> </th>
+  </tr>
   </thead>
 
   <tbody>
