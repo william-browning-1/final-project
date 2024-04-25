@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.order_by(:lname)
+    @projects = Project.order(:pnum)
     render :index
   end
 end
