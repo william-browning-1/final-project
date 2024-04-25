@@ -11,11 +11,13 @@
   </thead>
 
   <tbody>
-    <tr> 
-      <td>PNUM_GOES_HERE</td>
-      <td>PSTDATE_GOES_HERE</td>
-      <td>PENDDATE_GOES_HERE</td>
-    </tr>
+    <% @projects.each do |project| %>
+        <tr> 
+        <td>PNUM_GOES_HERE</td>
+        <td>PSTDATE_GOES_HERE</td>
+        <td>PENDDATE_GOES_HERE</td>
+        </tr>
+    <% end %>
   </tbody>
 
 </table>
