@@ -38,31 +38,31 @@ Employee.create!(
 
 # Seed data for Projects
 Project.create!(
-  pnum: "P001",
+  pnum: 19,
   pstdate: Date.today,
   penddate: Date.today + 30.days
 )
 
 Project.create!(
-  pnum: "P002",
+  pnum: 22,
   pstdate: Date.today - 10.days,
   penddate: Date.today + 20.days
 )
 
 Project.create!(
-  pnum: "P003",
+  pnum: 35,
   pstdate: Date.today + 5.days,
   penddate: Date.today + 35.days
 )
 
 Project.create!(
-  pnum: "P004",
+  pnum: 47,
   pstdate: Date.today - 15.days,
   penddate: Date.today + 25.days
 )
 
 Project.create!(
-  pnum: "P005",
+  pnum: 58,
   pstdate: Date.today + 10.days,
   penddate: Date.today + 40.days
 )
