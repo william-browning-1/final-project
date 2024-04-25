@@ -13,15 +13,20 @@
 ActiveRecord::Schema[7.1].define(version: 2024_04_24_195252) do
   create_table "employees", force: :cascade do |t|
     t.string "fname"
+    t.string "string"
     t.string "lname"
     t.integer "ssn"
     t.float "salary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
     t.integer "pnum"
     t.date "pstdate"
     t.date "penddate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
