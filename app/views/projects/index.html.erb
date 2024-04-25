@@ -1,41 +1,15 @@
-<style>
-  table {
-    width: 100%;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-th {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-}
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+<head>
+<%= stylesheet_link_tag 'styles.css' %>
+</head>
 
-thead th {
-    background-color: #333; 
-    color: #fff;
-    padding: 8pxl;
-    text-align: left;
-    border-bottom: 2px solid #ddd;
-}
+<nav>
+  <ul>
+    <li><a href="/main">Home</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/employees">Employees</a></li>
+  </ul>
+</nav>
 
-thead th a {
-    color: inherit; 
-    text-decoration: none;
-}
-
-thead th a:hover {
-color: inherit; /* Inherit color on hover */
-text-decoration: underline; /* Underline on hover */
-}
-
-</style>
 <h1>Projects</h1>
 
 <table>

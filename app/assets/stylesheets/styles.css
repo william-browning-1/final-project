@@ -30,6 +30,6 @@ thead th a {
 }
 
 thead th a:hover {
-color: inherit; /* Inherit color on hover */
-text-decoration: underline; /* Underline on hover */
+color: inherit; 
+text-decoration: underline; 
 }
