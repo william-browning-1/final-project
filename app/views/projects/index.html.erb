@@ -13,9 +13,9 @@
   <tbody>
     <% @projects.each do |project| %>
         <tr> 
-        <td><% project.pnum %></td>
-        <td><% project.pstdate%></td>
-        <td><% project.penddate%></td>
+        <td><%= project.pnum %></td>
+        <td><%= project.pstdate%></td>
+        <td><%= project.penddate%></td>
         </tr>
     <% end %>
   </tbody>

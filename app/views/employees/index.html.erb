@@ -1,8 +1,8 @@
 <h1>Employees</h1>
-
+<link rel="stylesheet" type="text/css" href="style.css">
 <table class="table table-hover">
 
-  <thead class="thead-dark">
+  <thead class="">
     <tr>
       <th>Last Name</th>
       <th>First Name</th>
@@ -14,10 +14,10 @@
   <tbody>
     <% @employees.each do |employee| %>
     <tr> 
-      <td><% employee.lname %></td>
-      <td><% employee.fname %></td>
-      <td><% employee.ssn%></td>
-      <td><% employee.salary%></td>
+      <td><%= employee.lname %></td>
+      <td><%= employee.fname %></td>
+      <td><%= employee.ssn%></td>
+      <td><%= employee.salary%></td>
     </tr>
     <% end %>
   </tbody>
