@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   def index
-    @employees = Employee.order(:lname)
+    @employees = Employee.all
     render :index
   end
 end

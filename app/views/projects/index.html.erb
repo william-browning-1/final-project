@@ -8,12 +8,24 @@
         text-align: left;
         border-bottom: 1px solid #ddd;
     }
+    th {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+    }
     tr:nth-child(even) {
         background-color: #f2f2f2;
     }
 </style>
 
 <h1>Projects</h1>
+
+<select id="attributeSelect">
+    <option value="pnum">Project Number</option>
+    <option value="pstdate">Start Date</option>
+    <option value="penddate">End Date</option>
+</select>
+<button id='sortButton'>Sort</button>
 
 <table>
 
