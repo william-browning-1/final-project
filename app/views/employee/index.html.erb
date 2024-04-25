@@ -12,12 +12,14 @@
   </thead>
 
   <tbody>
+    <% @employees.each do |employee| %>
     <tr> 
       <td>FIRSTNAME_GOES_HERE</td>
       <td>LASTNAME_GOES_HERE</td>
       <td>SSN_GOES_HERE</td>
       <td>SALARY_GOES_HERE</td>
     </tr>
+    <% end %>
   </tbody>
 
 </table>
