@@ -2,7 +2,14 @@
 <%= stylesheet_link_tag 'styles.css' %>
 </head>
 
-<%= render partial: 'layouts/navbar' %>
+<body>
+<nav>
+  <ul>
+    <li><a href="/main">Home</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/employees">Employees</a></li>
+  </ul>
+</nav>
 
 <h1>Projects</h1>
 
@@ -15,14 +22,6 @@
 
 <button id="sortButton">Sort</button>
 <table>
-
-  <thead>
-    <tr>
-    <th>Project Number</th>
-    <th>Start Date</th>
-    <th>End Date</th>
-  </tr>
-  </thead>
 
   <tbody id='projectTable'>
     <% @projects.each do |project| %>
@@ -48,6 +47,10 @@
     xhr.open('GET', `/projects?sort=${attr}`, true);
     xhr.onload = function() {
       if (xhr.status === 200) {
+
+        // Parse the response HTML
+        const parser = new DOMParser();
+        const htmlDoc = parser.parseFromString(xhr.responseText, 'text/html');
         // Update table with received data
         const projectTable = document.getElementById('projectTable');
         projectTable.innerHTML = xhr.responseText;
@@ -58,3 +61,4 @@
     xhr.send();
   });
 </script>
+</body>
