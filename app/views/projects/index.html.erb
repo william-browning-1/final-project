@@ -48,30 +48,8 @@
   sortButton.addEventListener('click', function() {
     const selectHeader = document.getElementById('selectHeader');
     const attr = selectHeader.value;
-    const rows = document.querySelectorAll('.row');
-    
-    const sortedRows = Array.from(rows).sort((a, b) => {
-      const aValue = a.getElementById(${attr}).textContent;
-      const bValue = b.getElementById(${attr}).textContent;
 
-
-      if (!isNaN(Date.parse(aValue)) && !isNaN(Date.parse(bValue))) {
-        // If dates
-        return new Date(aValue) - new Date(bValue);
-      } else if (!isNaN(parseFloat(aValue)) && !isNaN(parseFloat(bValue))) {
-        // If numbers
-        return parseFloat(aValue) - parseFloat(bValue);
-      } else {
-        // Otherwise, compare as strings
-        return aValue.localeCompare(bValue);
-      }
-    });
-    //clears the table
-    const projectTable = document.getElementById('projectTable');
-    projectTable.innerHTML = '';
-    //adds new rows to the table
-    sortedRows.forEach(row => {
-      projectTable.appendChild(row);
-    });
+    // Send AJAX request to server
+    const xhr = new XMLHttpRequest();
   });
 </script>
