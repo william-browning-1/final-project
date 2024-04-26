@@ -69,5 +69,9 @@
     //clears the table
     const projectTable = document.getElementById('projectTable');
     projectTable.innerHTML = '';
+    //adds new rows to the table
+    sortedRows.forEach(row => {
+      projectTable.appendChild(row);
+    });
   });
 </script>
