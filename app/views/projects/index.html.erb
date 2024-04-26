@@ -36,29 +36,37 @@
 </table>
 
 <script>
-  const sortButton = document.getElementById('sortButton');
-  
   sortButton.addEventListener('click', function() {
-    const selectHeader = document.getElementById('selectHeader');
-    const attr = selectHeader.value;
+  const selectHeader = document.getElementById('selectHeader');
+  const attr = selectHeader.value;
 
-    // Send AJAX request to server
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `/projects?sort=${attr}`, true);
-    xhr.onload = function() {
-      if (xhr.status === 200) {
+  // Send AJAX request to server
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `/projects?sort=${attr}`, true);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      // Parse the response HTML
+      const parser = new DOMParser();
+      const htmlDoc = parser.parseFromString(xhr.responseText, 'text/html');
 
-        // Parse the response HTML
-        const parser = new DOMParser();
-        const htmlDoc = parser.parseFromString(xhr.responseText, 'text/html');
-        // Update table with received data
-        const projectTable = document.getElementById('projectTable');
-        projectTable.innerHTML = xhr.responseText;
-      } else {
-        console.error('Request failed. Status:', xhr.status);
+      // Remove the navbar from the parsed HTML
+      const navbar = htmlDoc.querySelector('nav');
+      if (navbar) {
+        navbar.remove();
       }
-    };
-    xhr.send();
-  });
+      
+      // Extract the table data from the parsed HTML
+      const tableData = htmlDoc.querySelector('#projectTable').innerHTML;
+
+      // Update table with received data
+      const projectTable = document.getElementById('projectTable');
+      projectTable.innerHTML = tableData;
+    } else {
+      console.error('Request failed. Status:', xhr.status);
+    }
+  };
+  xhr.send();
+});
+
 </script>
 </body>
