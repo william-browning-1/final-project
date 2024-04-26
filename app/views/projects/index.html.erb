@@ -51,7 +51,7 @@
 
     // Send AJAX request to server
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', '/projects',true);
+    xhr.open('GET', '/projects?sort=${attr}',true);
     xhr.onload = functuion() {
       if (xhr.status == 200) { //200 means that xml has loaded or is done.
       const projectTable = document.getElementById('projectTable');
@@ -63,4 +63,3 @@
   xhr.send();
   });
 </script>
-d
