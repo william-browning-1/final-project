@@ -33,9 +33,9 @@
   <tbody id='projectTable'>
     <% @projects.each do |project| %>
         <tr class='row'> 
-        <td class='pnum'><%= project.pnum %></td>
-        <td class='pstdate'><%= project.pstdate%></td>
-        <td class='penddate'><%= project.penddate%></td>
+        <td id='pnum'><%= project.pnum %></td>
+        <td id='pstdate'><%= project.pstdate%></td>
+        <td id='penddate'><%= project.penddate%></td>
         </tr>
     <% end %>
   </tbody>
@@ -43,15 +43,20 @@
 </table>
 
 <script>
-  const selectHeader = document.getElementById('selectHeader');
-  const attr = selectHeader.value;
   const sortButton = document.getElementById('sortButton');
   
   sortButton.addEventListener('click', function() {
+    const selectHeader = document.getElementById('selectHeader');
+    const attr = selectHeader.value;
     const rows = document.querySelectorAll('.row');
-    let attributes = [];
-    rows.forEach(row =>{
-    });
-  });
+    
+    const sortedRows = Array.from(rows).sort((a, b) => {
+      const aValue = a.getElementById(${attr}).textContent;
+      const bValue = b.getElementById(${attr}).textContent;
 
+
+      
+    const projectTable = document.getElementById('projectTable');
+    projectTable.innerHTML = '';
+  });
 </script>
