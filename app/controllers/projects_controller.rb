@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.order(params[:sort])
+    @projects = Project.all
     render :index
   end
 end

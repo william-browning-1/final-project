@@ -12,24 +12,46 @@
 
 <h1>Projects</h1>
 
+<select id="selectHeader">
+  <option value="">Select an attribute</option>
+  <option value="pnum">Project Number</option>
+  <option value="pstdate">Start Date</option>
+  <option value="penddate">End Date</option>
+</select>
+
+<button id="sortButton">Sort</button>
 <table>
 
   <thead>
     <tr>
-    <th><%= link_to "Project Number", :sort => "pnum"%> </th>
-    <th><%= link_to "Start Date", :sort => "pstdate"%> </th>
-    <th><%= link_to "End Date", :sort => "penddate"%> </th>
+    <th>Project Number</th>
+    <th>Start Date</th>
+    <th>End Date</th>
   </tr>
   </thead>
 
-  <tbody>
+  <tbody id='projectTable'>
     <% @projects.each do |project| %>
-        <tr> 
-        <td><%= project.pnum %></td>
-        <td><%= project.pstdate%></td>
-        <td><%= project.penddate%></td>
+        <tr class='row'> 
+        <td class='pnum'><%= project.pnum %></td>
+        <td class='pstdate'><%= project.pstdate%></td>
+        <td class='penddate'><%= project.penddate%></td>
         </tr>
     <% end %>
   </tbody>
 
 </table>
+
+<script>
+  const selectHeader = document.getElementById('selectHeader');
+  const attr = selectHeader.value;
+  const sortButton = document.getElementById('sortButton');
+  
+  sortButton.addEventListener('click', function() {
+    const rows = document.querySelectorAll('.row');
+    let attributes = [];
+    rows.forEach(row =>{
+    });
+  });
+
+</script>

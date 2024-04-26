@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   def index
-    @employees = Employee.order(params[:sort])
+    @employees = Employee.all
     render :index
   end
 end
