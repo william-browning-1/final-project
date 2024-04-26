@@ -1,0 +1,12 @@
+
+
+
+<tbody id='projectTable'>
+    <% @projects.each do |project| %>
+        <tr class='row'> 
+        <td id='pnum'><%= project.pnum %></td>
+        <td id='pstdate'><%= project.pstdate%></td>
+        <td id='penddate'><%= project.penddate%></td>
+        </tr>
+    <% end %>
+</tbody>
