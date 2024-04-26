@@ -51,15 +51,16 @@
 
     // Send AJAX request to server
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', '/projects?sort=${attr}',true);
-    xhr.onload = functuion() {
-      if (xhr.status == 200) { //200 means that xml has loaded or is done.
-      const projectTable = document.getElementById('projectTable');
-      projectTable.innerHTML = xhr.responseText;  //adding back to HTML
-    } else {
+    xhr.open('GET', `/projects?sort=${attr}`, true);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // Update table with received data
+        const projectTable = document.getElementById('projectTable');
+        projectTable.innerHTML = xhr.responseText;
+      } else {
         console.error('Request failed. Status:', xhr.status);
-    }
-  };
-  xhr.send();
+      }
+    };
+    xhr.send();
   });
 </script>
